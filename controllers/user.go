@@ -11,9 +11,8 @@ type BookController struct {
 	beego.Controller
 }
 
-
 //创建用户信息
-//需要传入: 用户名:string  密码:string
+//需要传入参数(必选): name:string  password:string
 func (that *BookController) CreateUser() {
 	name := that.GetString("name")
 	password := that.GetString("password")
@@ -24,7 +23,7 @@ func (that *BookController) CreateUser() {
 		result.Msg = "用户名或密码不能为空"
 	} else {
 		var user models.User
-		user.Name= name
+		user.Name = name
 		user.Password = password
 		// insert
 		err := models.InsertUser(user)
@@ -42,29 +41,29 @@ func (that *BookController) CreateUser() {
 }
 
 //查询用户信息
-//输入参数 用户名:name(可选)  不输入用户名,则默认查询所有用户信息
-func (that *BookController) QueryUserInfo()  {
+//输入参数(可选): name:string  不输入用户名,则默认查询所有用户信息
+func (that *BookController) QueryUserInfo() {
 	name := that.GetString("name")
 
 	response := base.Response{}
 	//不为空定点查询
-	if name != ""{
+	if name != "" {
 		user, err := models.QueryUserInfo(name)
 		if err != nil {
 			response.Success = false
 			response.Msg = "查询用户信息失败: " + err.Error()
-		}else {
+		} else {
 			response.Success = true
 			response.Msg = "查询成功"
 			response.Data = user
 		}
-	}else {
+	} else {
 		//查询所有用户信息
 		users, err := models.QueryAllUserInfo()
 		if err != nil {
 			response.Success = false
 			response.Msg = "查询所有用户信息失败: " + err.Error()
-		}else {
+		} else {
 			response.Success = true
 			response.Msg = "查询成功"
 			response.Data = users

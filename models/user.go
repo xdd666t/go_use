@@ -7,16 +7,17 @@ import (
 
 // 完成User类型定义
 type User struct {
-	Id       int `orm:"pk;auto"` // 设置为主键，字段Id
-	Name string
-	Password string
+	// 设置为主键，字段Id
+	Id       int    `orm:"pk;auto" json:"id"`
+	Name     string `json:"name"`
+	Password string `json:"password"`
 }
 
 //向数据中插入新用户
 func InsertUser(user User) error {
 	//判断用户名是否重复
 	repeatUser, _ := QueryUserInfo(user.Name)
-	if  repeatUser != (User{}) {
+	if repeatUser != (User{}) {
 		return errors.New("用户名重复，请更换用户名后重试")
 	}
 	//插入用户
@@ -26,7 +27,7 @@ func InsertUser(user User) error {
 	return err
 }
 
- //通过用户名获取用户信息
+//通过用户名获取用户信息
 func QueryUserInfo(name string) (User, error) {
 	var user User
 	o := orm.NewOrm()
