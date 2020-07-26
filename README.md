@@ -14,5 +14,7 @@ go get -u github.com/beego/bee
 go get github.com/astaxie/beego/orm
 //导入gin
 go get -u github.com/gin-gonic/gin
+//测试框架
+go get github.com/smartystreets/goconvey
 ```
 
