@@ -8,12 +8,12 @@ import (
 func init() {
 	router := beego.NewNamespace("/user",
 		//创建用户
-		beego.NSRouter("/createUser/?:name/?:password",
-			&controllers.BookController{}, "post:CreateUser",
+		beego.NSRouter("/addUser/?:name/?:password",
+			&controllers.BookController{}, "post:AddUser",
 		),
 		//查询用户信息
-		beego.NSRouter("/queryUserInfo/?:name",
-			&controllers.BookController{}, "get:QueryUserInfo",
+		beego.NSRouter("/getUserInfo/?:name",
+			&controllers.BookController{}, "get:GetUserInfo",
 		),
 	)
 

@@ -13,7 +13,7 @@ type BookController struct {
 
 //创建用户信息
 //需要传入参数(必选): name:string  password:string
-func (that *BookController) CreateUser() {
+func (that *BookController) AddUser() {
 	name := that.GetString("name")
 	password := that.GetString("password")
 
@@ -42,7 +42,7 @@ func (that *BookController) CreateUser() {
 
 //查询用户信息
 //输入参数(可选): name:string  不输入用户名,则默认查询所有用户信息
-func (that *BookController) QueryUserInfo() {
+func (that *BookController) GetUserInfo() {
 	name := that.GetString("name")
 
 	response := base.Response{}
