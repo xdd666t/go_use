@@ -7,7 +7,7 @@ book后台管理
 
 ```
 //初始化go mod
-go mod init book-backstage
+go mod init book_backstage
 //导入beego相关包
 go get github.com/astaxie/beego
 go get -u github.com/beego/bee
