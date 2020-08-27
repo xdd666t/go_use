@@ -3,7 +3,7 @@ package init
 import (
 	_ "github.com/go-sql-driver/mysql"
 
-	"book-backstage/models"
+	"book_backstage/models"
 	"github.com/astaxie/beego/orm"
 )
 

@@ -1,8 +1,8 @@
 package main
 
 import (
-	_ "book-backstage/init"
-	_ "book-backstage/routers"
+	_ "book_backstage/init"
+	_ "book_backstage/routers"
 
 	"github.com/astaxie/beego"
 )

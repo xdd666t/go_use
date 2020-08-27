@@ -1,7 +1,7 @@
 package test
 
 import (
-	_ "book-backstage/routers"
+	_ "book_backstage/routers"
 	"net/http"
 	"net/http/httptest"
 	"path/filepath"

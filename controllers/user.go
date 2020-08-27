@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"book-backstage/models"
-	"book-backstage/models/base"
+	"book_backstage/models"
+	"book_backstage/models/base"
 	"github.com/astaxie/beego"
 )
 

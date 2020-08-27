@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"book-backstage/controllers"
+	"book_backstage/controllers"
 	"github.com/astaxie/beego"
 )
 
